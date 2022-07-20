@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pk</groupId>
-    <artifactId>OrderServer</artifactId>
+    <artifactId>UserServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>OrderServer</name>
-    <description>OrderServer</description>
+    <name>UserServer</name>
+    <description>UserServer</description>
     <properties>
         <java.version>17</java.version>
     </properties>
