@@ -1,0 +1,14 @@
+server:
+  port: 88
+
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: MYDB
+    password: 123
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.OracleDriver
+mybatis:
+  type-aliases-package: com.gao.pojo
+  mapper-locations: classpath:mapper/*.xml
