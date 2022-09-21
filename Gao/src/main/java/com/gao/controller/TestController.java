@@ -2,6 +2,7 @@ package com.gao.controller;
 
 
 import com.gao.pojo.JsonTree;
+import com.pk.commonserver.util.R;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -147,5 +148,11 @@ public class TestController {
         System.out.println(list.size());
         System.out.println(set.size());
         return "ok";
+    }
+
+    @GetMapping("ff")
+    public R ff(){
+
+        return R.ok().put("aaa");
     }
 }
