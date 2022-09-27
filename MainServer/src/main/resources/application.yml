@@ -1,6 +1,14 @@
 server:
-  port: 8900
+  port: 8090
 
 spring:
-  application:
-    name: mian-server
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.19.50.66:1521/test02db
+    name: SICSLIFECEDED_DEBUG1
+    password: SICSLIFECEDED_DEBUG1
+
+
+rocketmq:
+  ##broker设置端口号
+  name-server: localhost:9876

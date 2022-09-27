@@ -13,7 +13,11 @@
 
     <!--批量打包-->
     <modules>
+        <module>CommonServer</module>
         <module>MainServer</module>
+        <module>OrderServer</module>
+        <module>ProductServer</module>
+        <module>UserServer</module>
     </modules>
 
     <properties>

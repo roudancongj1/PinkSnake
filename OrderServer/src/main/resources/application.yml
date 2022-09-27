@@ -1,2 +1,13 @@
 server:
-  port: 8901
+  port: 8091
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.19.50.66:1521/test02db
+    name: SICSLIFECEDED_DEBUG1
+    password: SICSLIFECEDED_DEBUG1
+
+
+rocketmq:
+  name-server: localhost:9876
