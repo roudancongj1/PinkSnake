@@ -13,17 +13,17 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 @Component
-@RocketMQMessageListener(topic = TopicBy.ORDER,consumerGroup = TopicBy.ORDER)
-public class TestService implements RocketMQListener<ArrayList<AVB>> {
+@RocketMQMessageListener(topic = TopicBy.PRODUCT,consumerGroup = TopicBy.PRODUCT)
+public class TestService2 implements RocketMQListener<String> {
 
-    private static final Logger log = LoggerFactory.getLogger(TestService.class);
+    private static final Logger log = LoggerFactory.getLogger(TestService2.class);
 
     @Autowired
     private RocketMQTemplate stockMqTemplate;
 
 
     @Override
-    public void onMessage(ArrayList<AVB> avb) {
+    public void onMessage(String avb) {
         log.info("--------------------------------监听成功，开始执行----------------------------");
         log.info("您传入的对象是:"+avb);
         log.info("--------------------------------运行结束------------------------------------");

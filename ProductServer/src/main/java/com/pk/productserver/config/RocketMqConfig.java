@@ -1,4 +1,4 @@
-package com.pk.orderserver.config;
+package com.pk.productserver.config;
 
 
 import com.pk.commonserver.config.RocketMqAdapter;
@@ -19,7 +19,7 @@ public class RocketMqConfig {
     @Lazy
     @Bean(destroyMethod = "destroy")
     public RocketMQTemplate stockMqTemplate() {
-        return rocketMqAdapter.getTemplateByProducerGroup("producer-group1");
+        return rocketMqAdapter.getTemplateByProducerGroup("producer-group");
     }
 
 

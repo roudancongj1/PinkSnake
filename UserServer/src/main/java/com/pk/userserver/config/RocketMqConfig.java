@@ -1,4 +1,4 @@
-package com.pk.orderserver.config;
+package com.pk.userserver.config;
 
 
 import com.pk.commonserver.config.RocketMqAdapter;

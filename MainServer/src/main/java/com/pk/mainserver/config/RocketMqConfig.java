@@ -19,7 +19,7 @@ public class RocketMqConfig {
     @Lazy
     @Bean(destroyMethod = "destroy")
     public RocketMQTemplate stockMqTemplate() {
-        return rocketMqAdapter.getTemplateByTopic("topic-name");
+        return rocketMqAdapter.getTemplateByProducerGroup("producer-group1");
     }
 
 

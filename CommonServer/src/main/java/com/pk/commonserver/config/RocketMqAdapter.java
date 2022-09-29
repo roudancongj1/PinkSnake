@@ -2,7 +2,6 @@ package com.pk.commonserver.config;
 
 
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
-import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +16,13 @@ public class RocketMqAdapter {
     @Autowired
     private RocketMQMessageConverter rocketMqMessageConverter;
 
-    @Value("${rocketmq.name-server}")
+    @Value("${rocketmq.name-server}")//name-server -> topic -> queue
     private String nameServer;
 
-    public RocketMQTemplate getTemplateByTopic(String topic){
+    public RocketMQTemplate getTemplateByProducerGroup(String producerGroup){
         RocketMQTemplate rocketMQTemplate = new RocketMQTemplate();
-        DefaultMQProducer producer = new DefaultMQProducer(topic);
+        //producer set message object Temp set Object
+        DefaultMQProducer producer = new DefaultMQProducer(producerGroup);
         //MQ地址
         producer.setNamesrvAddr(nameServer);
         //失败重试次数

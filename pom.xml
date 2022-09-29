@@ -30,6 +30,8 @@
         <fastjson.version>2.0.13</fastjson.version>
         <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
         <rocketmq.springboot.version>2.2.2</rocketmq.springboot.version>
+        <redis.version>2.7.0</redis.version>
+
 
 
         <!--编译字符集-->
@@ -90,6 +92,11 @@
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <version>${rocketmq.springboot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${redis.version}</version>
+        </dependency>
     </dependencies>
 
 
@@ -117,6 +124,21 @@
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!--阿里镜像-->
+        <repository>
+            <id>central</id>
+            <name>AlYun maven</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <layout>default</layout>
+            <!-- 是否开启发布版构件下载 -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!-- 是否开启快照版构件下载 -->
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

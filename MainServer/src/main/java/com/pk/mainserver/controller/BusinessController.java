@@ -3,17 +3,21 @@ package com.pk.mainserver.controller;
 import com.alibaba.fastjson.JSON;
 import com.pk.commonserver.pojo.AVB;
 import com.pk.commonserver.pojo.Business;
+import com.pk.commonserver.util.MqTopic;
+import com.pk.commonserver.util.TopicBy;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.client.producer.SendStatus;
+import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,9 +62,10 @@ public class BusinessController {
         avb.setB("BBBBBBBBBBBBBBBB");
         ArrayList<AVB> list = new ArrayList<>();
         list.add(avb);
+        SendResult syncSend = stockMqTemplate.syncSend(TopicBy.ORDER, list);
+        SendResult syncSend2 = stockMqTemplate.syncSend(TopicBy.PRODUCT, "body");
 
-        SendResult syncSend = stockMqTemplate.syncSend("order-topic", list);
-        if (syncSend.getSendStatus() == SendStatus.SEND_OK)
+        if (syncSend.getSendStatus() == SendStatus.SEND_OK && syncSend2.getSendStatus() == SendStatus.SEND_OK)
             return "发送成功:";
         else
             return "发送失败";
