@@ -9,5 +9,6 @@ spring:
     password: SICSLIFECEDED_DEBUG1
 
 
+
 rocketmq:
   name-server: localhost:9876
