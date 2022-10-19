@@ -2,6 +2,16 @@ server:
   port: 8090
 
 spring:
+  application:
+    name: MainServer
+
+  mvc:
+    pathmatch:
+      # 解决集成Swagger错误问题
+      matching-strategy: ant_path_matcher
+
+
+
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@172.19.50.66:1521/test02db
@@ -14,6 +24,9 @@ spring:
         server-addr: 127.0.0.1:8848
 
 
+
 rocketmq:
   ##broker设置端口号
   name-server: localhost:9876
+
+

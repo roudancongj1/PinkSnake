@@ -16,6 +16,7 @@
     <description>主要服务</description>
 
     <properties>
+        <name>${artifactId}</name>
         <java.version>17</java.version>
     </properties>
     <dependencies>
@@ -24,6 +25,18 @@
             <artifactId>CommonServer</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!--nacos clint-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <!--
+            <exclusions>
+                <exclusion>排除dependency</exclusion>
+            </exclusions>
+            -->
+        </dependency>
+
 
     </dependencies>
 
@@ -42,6 +55,8 @@
                 </configuration>
             </plugin>
         </plugins>
+
+
     </build>
 
 </project>
