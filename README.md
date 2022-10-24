@@ -28,3 +28,7 @@ JSON
     "timestamp": "",
 }
 
+###4.监控页面
+#### localhost:8848/nacos --nacos
+#### http://localhost:8090/swagger-ui/index.html#/ --swagger
+#### 
