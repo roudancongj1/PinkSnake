@@ -29,4 +29,11 @@ rocketmq:
   ##broker设置端口号
   name-server: localhost:9876
 
+#logging:
+#  level:
+#    root: info
+#  file:
+#    path: ./ServerLog
+#    name: pkMain.log
+
 

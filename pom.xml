@@ -18,6 +18,7 @@
         <module>OrderServer</module>
         <module>ProductServer</module>
         <module>UserServer</module>
+        <module>WebServer</module>
     </modules>
 
     <properties>
